@@ -1,0 +1,41 @@
+.parent-body {
+    background: linear-gradient(120deg, #007bff 0%, #6610f2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    width: 420px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.toggle-btn {
+    color: #007bff;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.toggle-btn:hover {
+    text-decoration: underline;
+}
+
+.input-group-text {
+    background-color: #f1f3f5;
+}
+
+.fa-code {
+    color: #007bff;
+}

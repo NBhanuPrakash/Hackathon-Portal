@@ -1,0 +1,81 @@
+<div class="container mt-5">
+  <div class="row">
+
+    <!-- Competition List (col-8) -->
+    <div class="col-lg-8 mb-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h5>Competitions</h5>
+        </div>
+        <div class="card-body">
+
+          <!-- Example Competition Card -->
+           @for(card of competitionResp; track $index){
+            <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">{{card.title}}</h5>
+              <p class="card-text">{{card.description}}</p>
+              <p class="card-text"><strong>Start:</strong> {{card.startDate | date:'dd-MM-yy'}}</p>
+              <p class="card-text"><strong>End:</strong> {{card.endDate | date:'dd-MM-yy'}}</p>
+              <p class="card-text"><strong>Status:</strong> {{card.status}}</p>
+              <button class="btn btn-sm btn-warning me-2">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </div>
+          </div>
+           }
+          
+
+          <!-- Repeat competition cards dynamically -->
+          <div id="competitionList"></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Competition Form (col-4) -->
+    <div class="col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          <h5>Create / Update Competition</h5>
+        </div>
+        <div class="card-body">
+          <form id="competitionForm">
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" [(ngModel)]="competitionObj.title" name="title" class="form-control" id="title" placeholder="Competition Title" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" [(ngModel)]="competitionObj.description" name="description" id="description" rows="3" placeholder="Competition Description" required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="startDate" class="form-label">Start Date</label>
+              <input type="date" [(ngModel)]="competitionObj.startDate" name="startDate" class="form-control" id="startDate" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="endDate" class="form-label">End Date</label>
+              <input type="date" [(ngModel)]="competitionObj.endDate" name="endDate" class="form-control" id="endDate" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select [(ngModel)]="competitionObj.status" name="status" class="form-select" id="status" required>
+                <option value="" disabled selected>Select status</option>
+                <option value="Open">Open</option>
+                <option value="Closed">Closed</option>
+                <option value="InProgress">In Progress</option>
+                <option value="Active">Active</option>
+              </select>
+            </div>
+
+            <button (click)="onCompetionSub()" type="submit" class="btn btn-success w-100">Save Competition</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

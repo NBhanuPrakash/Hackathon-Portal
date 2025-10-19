@@ -1,0 +1,75 @@
+<div class="parent-body">
+    
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>Organize & Compete in Hackathons Easily</h1>
+        <p>Join exciting competitions, showcase your projects, and win amazing prizes!</p>
+        <a routerLink="/register" class="btn btn-primary btn-lg mt-4">
+          <i class="fa fa-user-plus"></i> Register Now
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about text-center" id="about">
+      <div class="container">
+        <h2 class="fw-bold mb-5">Why Choose Hackathon Hub?</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <i class="fa fa-users"></i>
+            <h5 class="fw-bold mt-3">Easy Registration</h5>
+            <p>Participants can quickly register and join hackathons or project competitions.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fa fa-dashboard"></i>
+            <h5 class="fw-bold mt-3">Organizer Dashboard</h5>
+            <p>Organizers can track registrations, manage events, and declare winners easily.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fa fa-trophy"></i>
+            <h5 class="fw-bold mt-3">Leaderboard & Winners</h5>
+            <p>Display live results and celebrate top performers in real-time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Competitions -->
+    <section class="competitions" id="competitions">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-5">Upcoming Competitions</h2>
+        <div class="row g-4">
+          @for( items of $eventList | async; track $index){
+            <div class="col-md-4">
+            <div class="card competition-card">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">{{items.title}}</h5>
+                <p class="card-text">{{items.description}}</p>
+                <a  class="btn btn-outline-primary">View Details</a>
+                <a (click)="onEventRegister(items.competitionId)" class="btn btn-outline-primary">Register</a>
+              </div>
+            </div>
+          </div>
+          }
+          
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration -->
+    <section class="text-center py-5" id="register">
+      <div class="container">
+        <h2 class="fw-bold mb-4">Ready to Compete?</h2>
+        <p>Register yourself and join the next big hackathon!</p>
+        <a routerLink="/register" class="btn btn-success btn-lg">
+          <i class="fa fa-pencil-square-o"></i> Go to Registration
+        </a>
+      </div>
+    </section>
+
+
+
+</div>

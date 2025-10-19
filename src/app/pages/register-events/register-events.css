@@ -1,0 +1,19 @@
+.parent-body {
+    background: linear-gradient(120deg, #007bff 0%, #6610f2 100%);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.card-header {
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+}
+
+button {
+    font-weight: 600;
+}

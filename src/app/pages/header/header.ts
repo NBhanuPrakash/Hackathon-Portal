@@ -1,17 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { Master } from './service/master/master';
+import { Router } from '@angular/router';
+import { Master } from '../../service/master/master';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, RouterLink],
-  templateUrl: './app.html',
-  styleUrl: './app.css',
+  selector: 'app-header',
+  imports: [],
+  templateUrl: './header.html',
+  styleUrl: './header.css'
 })
-export class App {
-  protected title = 'front-app-hackathon';
-
-  loggedData: any;
+export class Header {
+loggedData: any;
   masterService = inject(Master);
   router = inject(Router)
 

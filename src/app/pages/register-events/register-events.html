@@ -1,0 +1,45 @@
+<div class="parent-body">
+    <div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+          <h4>Project Submission</h4>
+          <p class="mb-0">Submit your project details for the selected competition</p>
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="submissionForm" (ngSubmit)="onSubmit()" id="projectSubmissionForm">
+            
+
+            <div class="mb-3">
+              <label for="projectTitle" class="form-label">Project Title</label>
+              <input formControlName="projectTitle" type="text" id="projectTitle" class="form-control" placeholder="Enter your project title" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Project Description</label>
+              <textarea formControlName="description" id="description" class="form-control" rows="4" placeholder="Briefly describe your project" required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="githubLink" class="form-label">GitHub Repository Link</label>
+              <input formControlName="githubLink"  type="url" id="githubLink" class="form-control" placeholder="https://github.com/your-repo" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="rank" class="form-label">Rank (Optional)</label>
+              <input formControlName="rank" type="number" id="rank" class="form-control" placeholder="Leave empty if not yet ranked">
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mt-2">
+              <i class="fa fa-paper-plane"></i> Submit Project
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
